@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Store{
-
     Random random = new Random();
 
     private Product[] range;
@@ -97,32 +96,9 @@ public class Store{
         }
 
         for (Product product : productsInShowcase) {
-            product.setStoragePlace("Ветрина");
+            product.setStoragePlace("  Ветрина  ");
         }
     }
-
-
-
-    public void showAll() {
-        System.out.println("Showcase");
-        for (Product val: productsInShowcase) {
-            System.out.println(val);
-        }
-
-        System.out.println("-------------------------------");
-        System.out.println("Icebox");
-
-        for (Product val: productsInIcebox) {
-            System.out.println(val);
-        }
-    }
-
-    public void Sow() {
-        for(Product val: productsInStore) {
-            System.out.println(val);
-        }
-    }
-
 
     public void doInspection() {
         System.out.println("""
@@ -130,6 +106,7 @@ public class Store{
                       Product   |    Produced on    |  Storage place  | S. life days |    Fresh
                 ----------------+-------------------+-----------------+--------------+---------------      
                 """);
+
         for (Product val: productsInStore) {
             System.out.println(val);
         }

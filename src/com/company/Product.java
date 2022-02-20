@@ -22,6 +22,10 @@ public abstract class Product{
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getCrok() {
         return crok;
     }
@@ -38,8 +42,16 @@ public abstract class Product{
         this.producedOn = producedOn;
     }
 
+    public String getStoragePlace() {
+        return storagePlace;
+    }
+
     public void setStoragePlace(String storagePlace) {
         this.storagePlace = storagePlace;
+    }
+
+    public boolean isFresh() {
+        return isFresh;
     }
 
     public void setFresh(boolean fresh) {
