@@ -1,4 +1,6 @@
 package com.company;
 
-public class Showcase extends Store{
+public class Showcase extends Store {
+
+
 }

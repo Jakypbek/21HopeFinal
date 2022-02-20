@@ -2,12 +2,7 @@ package com.company.products;
 
 import com.company.Product;
 
-import java.time.LocalDate;
-import java.util.Random;
-
 public class Milk extends Product {
-
-    Random random = new Random();
 
     public Milk() {
     }
@@ -17,8 +12,7 @@ public class Milk extends Product {
     }
 
     @Override
-    public void isFresh() {
-        super.isFresh();
+    public String toString() {
+        return super.toString();
     }
-
 }

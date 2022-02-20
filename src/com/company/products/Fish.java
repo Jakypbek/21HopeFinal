@@ -10,4 +10,9 @@ public class Fish extends Product {
     public Fish(String name, int crok) {
         super(name, crok);
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

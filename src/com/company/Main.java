@@ -14,19 +14,17 @@ public class Main {
                 new Milk("Молоко", 60),
                 new Fish("Рыба", 20),
                 new Stew("Тушенка", 180),
-                new Salt("Соль", 1000000),
+                new Salt("Соль", 100),
                 new Corn("Кукуруза", 150)
         });
 
-        store.fullStore();
-
-        store.setLength();
-
         store.placeProducts();
 
-        store.test();
 
-        store.showAll();
+        //store.showAll();
+
+        //store.Sow();
+        store.doInspection();
 
 
     }
