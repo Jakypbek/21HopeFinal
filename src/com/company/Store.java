@@ -34,7 +34,7 @@ public class Store{
             } else if (a == 2) {
                 productsInStore[i] = new Stew(range[2].getName(), range[2].getCrok());
             } else if (a == 3) {
-                productsInStore[i] = new Salt(range[3].getName(), range[3].getCrok());
+                productsInStore[i] = new Salt(range[3].getName(), range[3].getINF());
             } else {
                 productsInStore[i] = new Corn(range[4].getName(), range[4].getCrok());
             }
@@ -44,6 +44,14 @@ public class Store{
         setLength();
     }
 
+    /*
+    public void fullStare() {
+        for (int i = 0; i < productsInStore.length; i++) {
+            productsInStore[i] = range[random.nextInt(range.length)];
+        }
+    }
+     */
+
     public void setLength() {
         int a = random.nextInt(1, productsInStore.length);
 
@@ -52,8 +60,7 @@ public class Store{
     }
 
     public void placeProducts() {
-        int a = 0;
-
+/*
         for (int i = 0; i < productsInIcebox.length; i++) {
             productsInIcebox[i] = productsInStore[a];
             a++;
@@ -62,6 +69,33 @@ public class Store{
         for (int i = 0; i < productsInShowcase.length; i++) {
             productsInShowcase[i] = productsInStore[a];
             a++;
+        }
+
+ */     int a = 0;
+        int b = 0;
+        int c = 0;
+        for (int i = 0; i < productsInStore.length; i++) {
+            if (random.nextInt(2) % 2 == 0) {
+                try {
+                    productsInIcebox[b] = productsInStore[a];
+                    a++;
+                    b++;
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    productsInShowcase[c] = productsInStore[a];
+                    a++;
+                    c++;
+                }
+            } else {
+                try {
+                    productsInShowcase[c] = productsInStore[a];
+                    a++;
+                    c++;
+                } catch (ArrayIndexOutOfBoundsException r) {
+                    productsInIcebox[b] = productsInStore[a];
+                    a++;
+                    b++;
+                }
+            }
         }
 
         setStoragePlace();
@@ -103,8 +137,8 @@ public class Store{
     public void doInspection() {
         System.out.println("""
                                                Inspection result.
-                      Product   |    Produced on    |  Storage place  | S. life days |    Fresh
-                ----------------+-------------------+-----------------+--------------+---------------      
+                      Product   |     Produced on    |  Storage place  | S. life days |    Fresh
+                ----------------+--------------------+-----------------+--------------+---------------      
                 """);
 
         for (Product val: productsInStore) {
